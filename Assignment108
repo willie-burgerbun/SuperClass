@@ -1,35 +1,35 @@
-class Person:
+class Person:# Creates a class called Person with two attributes (name and year of birth)
   def __init__(self, name, birth_year):
       self.name = name
-      self.birth_year = birth_year
+      self.birth_year = birth_year 
 
-  def __str__(self):
+  def __str__(self):# Returns a string represenatative of the object Person with the name and birth year
       return f"Name: {self.name}, Birth Year: {self.birth_year}"
-class Student(Person):
+class Student(Person): # Creates a class called Student that inherits from the Person class
   def __init__(self, name, birth_year, major):
       super().__init__(name, birth_year)
-      self.major = major
+      self.major = major# Add a new attirbute called major
 
-  def __str__(self):
+  def __str__(self):# Returns a string represenatative of the object Student with the name, birth year and major
       return f"{super().__str__()}, Major: {self.major}"
-class Instructor(Person):
+class Instructor(Person): # Creates a class called Instructor that inherits from the Person class
   def __init__(self, name, birth_year, salary):
       super().__init__(name, birth_year)
-      self.salary = salary
+      self.salary = salary# Add a new attribute called salary
 
-  def __str__(self):
-      return f"{super().__str__()}, Salary: ${self.salary:,.2f}"
-def test_classes():
+  def __str__(self):# Return a string representing the object Instructor with the name, birth year and salary
+      return f"{super().__str__()}, Salary: ${self.salary:,.2f}"# Format the salary
+def test_classes(): # Test the classes
   # Test Person
-  person = Person("John Doe", 1990)
+  person = Person("Sarah Smart", 1990)
   print("Person:", person)
 
   # Test Student
-  student = Student("Alice Smith", 2000, "Computer Science")
+  student = Student("William Bargeron", 1975, "Computer Science")
   print("Student:", student)
 
   # Test Instructor
-  instructor = Instructor("Dr. Brown", 1975, 75000.00)
+  instructor = Instructor("Dr. Hewitt", 1979, 75000.00)
   print("Instructor:", instructor)
 if __name__ == "__main__":
   test_classes()
